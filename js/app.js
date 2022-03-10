@@ -52,17 +52,18 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
     const image = post.image;
+    const userImage = post.userImage;
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
-                  <a
+                   <a
                     href="https://github.com/ProgrammingHero1"
                     target="_blank"
                     class="post__avatar"
-                  >
-                    <img src="${image}" alt="User Picture" />
+                  > 
+                    <img src="${userImage}" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
@@ -162,6 +163,7 @@ const loadPosts = async () =>{
   let data = await fetch('../data/posts.json');
   posts = await data.json();
   showPosts(posts);
+  console.log(posts)
 }
 
 loadPosts();
