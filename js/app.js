@@ -165,6 +165,8 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+  const productsContainer = document.getElementById( "reported" );
+  productsContainer.innerHTML = "";
     const reportedPosts = getReportedPosts();
     reportedPosts.forEach((post) => {
         const div = createPost(post);
